@@ -20,31 +20,17 @@ async function run() {
     const client = new github.GitHub(token);
 
     // get bable prophecy
-
-    await getBabel(
-      context.payload.pull_request.diff_url,
-      client,
-      pull_request_number
-    );
-  } catch (error) {
-    core.setFailed(error.message);
-  }
-}
-
-async function getBabel(diff, client, pull_request_number) {
-  return request.get(diff, function (e, r, b) {
-    if (e || !r || r.statusCode >= 400)
-      core.setFailed(
-        "The Library of Babel is busy at the moment! Please look around the gift shop for a bit."
-      );
-    const data = {
-      find: b,
-      btnSubmit: "Search",
-      method: "x",
-    };
-    return request.post(
-      { url: url, formData: data },
-      function (err, res, body) {
+    request.get(diff, function (e, r, b) {
+      if (e || !r || r.statusCode >= 400)
+        core.setFailed(
+          "The Library of Babel is busy at the moment! Please look around the gift shop for a bit."
+        );
+      const data = {
+        find: b,
+        btnSubmit: "Search",
+        method: "x",
+      };
+      request.post({ url: url, formData: data }, function (err, res, body) {
         if (err || !res || res.statusCode >= 400)
           core.setFailed(
             "The Library of Babel is busy at the moment! Please look around the gift shop for a bit."
@@ -79,9 +65,11 @@ async function getBabel(diff, client, pull_request_number) {
           issue_number: pull_request_number,
           body: "hey! check out " + url,
         });
-      }
-    );
-  });
+      });
+    });
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
 
 run();
