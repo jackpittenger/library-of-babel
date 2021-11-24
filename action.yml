@@ -1,6 +1,6 @@
 name: "Library of Babel"
-author: "Saddy"
-description: "Posts the location in the library of babel!"
+author: "realSaddy"
+description: "Posts the location in the library of babel of a PR!"
 
 runs:
   using: "node12"

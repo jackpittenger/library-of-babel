@@ -60726,7 +60726,18 @@ async function run() {
         client.issues.createComment({
           ...context.repo,
           issue_number: pull_request_number,
-          body: "hey! check out " + url,
+          body:
+            "Dear Mortal,\nThe Tower of Bable is impressed with your code, but I found it on [page " +
+            page +
+            ", volume " +
+            volume +
+            ", shelf " +
+            shelf +
+            ", wall " +
+            wall +
+            " of one of my many rooms!](" +
+            url +
+            ").",
         });
       });
     });
