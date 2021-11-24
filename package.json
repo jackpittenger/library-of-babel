@@ -1,0 +1,16 @@
+{
+    "name": "library-of-babel",
+    "version": "0.0.1",
+    "description": "Be enlightened with the location in the library of Babel",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/realSaddy/library-of-babel.git"
+    },
+    "main": "main.js",
+    "author": "realSaddy",
+    "license": "AGPL-3.0-or-later",
+    "dependencies": {
+      "@actions/core": "^1.6.0",
+      "@actions/github": "^1.1.0"
+    }
+  }
