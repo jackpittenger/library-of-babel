@@ -5,5 +5,5 @@ jobs:
   library-of-babel:
     runs-on: ubuntu-latest
     steps:
-      - uses: realSaddy/library-of-babel
+      - uses: realSaddy/library-of-babel@0.0.3
 
