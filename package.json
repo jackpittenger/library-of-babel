@@ -11,6 +11,7 @@
   "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/github": "^1.1.0"
+    "@actions/github": "^1.1.0",
+    "request": "^2.88.2"
   }
 }
