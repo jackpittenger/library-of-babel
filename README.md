@@ -18,7 +18,7 @@ jobs:
   library-of-babel:
     runs-on: ubuntu-latest
     steps:
-      - uses: realSaddy/library-of-babel@v1.0.0
+      - uses: realSaddy/library-of-babel@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
