@@ -21,14 +21,7 @@ async function run() {
 
     // get bable prophecy
 
-    const url = await getBabel(context.payload.pull_request.diff_url);
-
-    // post content! :)
-    client.issues.createComment({
-      ...context.repo,
-      issue_number: pull_request_number,
-      body: "hey! check out " + url,
-    });
+    const url = await getBabel(client, context.payload.pull_request.diff_url);
   } catch (error) {
     core.setFailed(error.message);
   }
@@ -64,7 +57,7 @@ async function getBabel(diff) {
         const shelf = data[2];
         const volume = data[3];
         const page = data[4];
-        return (
+        var url =
           "https://libraryofbabel.info/book.cgi?" +
           hex +
           "-w" +
@@ -74,8 +67,14 @@ async function getBabel(diff) {
           "-v" +
           volume +
           ":" +
-          page
-        );
+          page;
+
+        // post content! :)
+        client.issues.createComment({
+          ...context.repo,
+          issue_number: pull_request_number,
+          body: "hey! check out " + url,
+        });
       }
     );
   });
