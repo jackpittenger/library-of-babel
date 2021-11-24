@@ -1,0 +1,7 @@
+name: "Library of Babel"
+author: "Saddy"
+description: "Posts the location in the library of babel!"
+
+runs:
+  using: "node12"
+  main: "main.js"
