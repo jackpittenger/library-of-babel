@@ -1,0 +1,8 @@
+name: 'Library of Babel'
+on: pull_request
+
+jobs:
+  add-reviews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: realSaddy/library-of-babel@alpha
