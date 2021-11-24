@@ -3,7 +3,7 @@ const github = require("@actions/github");
 
 async function run() {
   try {
-    const token = core.getInput("GITHUB_TOKEN", { required: true });
+    const token = process.env.GITHUB_TOKEN;
 
     const context = github.context;
     if (context.payload.pull_request == null) {
@@ -26,4 +26,3 @@ async function run() {
 }
 
 run();
-
