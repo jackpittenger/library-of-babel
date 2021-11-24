@@ -1,6 +1,8 @@
-name: "Library of Babel"
+name: "Library of Babel PR"
 author: "realSaddy"
 description: "Posts the location in the library of babel of a PR!"
+icon: "book-open"
+color: "white"
 
 runs:
   using: "node12"
