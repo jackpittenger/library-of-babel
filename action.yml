@@ -4,4 +4,4 @@ description: "Posts the location in the library of babel!"
 
 runs:
   using: "node12"
-  main: "main.js"
+  main: "dist/index.js"
