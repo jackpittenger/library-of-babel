@@ -21,13 +21,17 @@ async function run() {
 
     // get bable prophecy
 
-    const url = await getBabel(client, context.payload.pull_request.diff_url);
+    await getBabel(
+      context.payload.pull_request.diff_url,
+      client,
+      pull_request_number
+    );
   } catch (error) {
     core.setFailed(error.message);
   }
 }
 
-async function getBabel(diff) {
+async function getBabel(diff, client, pull_request_number) {
   return request.get(diff, function (e, r, b) {
     if (e || !r || r.statusCode >= 400)
       core.setFailed(
