@@ -5,4 +5,4 @@ jobs:
   library-of-babel:
     runs-on: ubuntu-latest
     steps:
-      - uses: realSaddy/library-of-babel@alpha
+      - uses: realSaddy/library-of-babel
