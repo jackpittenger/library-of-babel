@@ -20,7 +20,7 @@ async function run() {
     const client = new github.GitHub(token);
 
     // get bable prophecy
-    request.get(diff, function (e, r, b) {
+    request.get(context.payload.pull_request.diff_url, function (e, r, b) {
       if (e || !r || r.statusCode >= 400)
         core.setFailed(
           "The Library of Babel is busy at the moment! Please look around the gift shop for a bit."
