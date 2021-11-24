@@ -26,7 +26,7 @@ async function run() {
           "The Library of Babel is busy at the moment! Please look around the gift shop for a bit."
         );
       const data = {
-        find: b,
+        find: b.substring(0, Math.min(b.length, 3200)),
         btnSubmit: "Search",
         method: "x",
       };
